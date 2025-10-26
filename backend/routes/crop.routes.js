@@ -1,21 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const auth = require('../middleware/auth.middleware');
 const { analyzeCrop, getReports } = require('../controllers/crop.controller');
+const auth = require('../middleware/auth.middleware');
+const upload = require('../middleware/upload.middleware');
 
-// Multer setup for image uploads
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
-});
-const upload = multer({ storage: storage });
+// POST /api/crop/analyze - Submits a new crop analysis
+router.post('/analyze', auth, upload.single('image'), analyzeCrop);
 
-router.post('/analyze', [auth, upload.single('cropImage')], analyzeCrop);
-router.get('/reports', auth, getReports);
+// GET /api/crop - Gets all reports for the logged-in user
+router.get('/', auth, getReports);
 
 module.exports = router;

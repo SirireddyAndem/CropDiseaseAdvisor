@@ -14,10 +14,10 @@ exports.register = async (req, res) => {
     const payload = { user: { id: user.id } };
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '5h' }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.status(201).json({ token });
     });
   } catch (err) {
-    console.error(err.message);
+    console.error('Error in register:', err);
     res.status(500).send('Server error');
   }
 };
@@ -37,7 +37,7 @@ exports.login = async (req, res) => {
       res.json({ token });
     });
   } catch (err) {
-    console.error(err.message);
+    console.error('Error in login:', err);
     res.status(500).send('Server error');
   }
 };
