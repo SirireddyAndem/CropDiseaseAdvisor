@@ -1,0 +1,76 @@
+<div class="contact-container">
+  <h1>{{ 'CONTACT.TITLE' | translate }}</h1>
+
+  <div class="contact-content">
+    <section class="contact-intro">
+      <mat-card class="intro-card">
+        <mat-card-content>
+          <p>{{ 'CONTACT.INTRO' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="contact-details">
+      <mat-card class="contact-card">
+        <mat-card-title>{{ 'CONTACT.CONTACT_INFO' | translate }}</mat-card-title>
+        <mat-card-content>
+          <div class="contact-info-grid">
+            <div class="info-item">
+              <h3>{{ 'CONTACT.EMAIL' | translate }}</h3>
+              <p>{{ 'CONTACT.EMAIL_VALUE' | translate }}</p>
+            </div>
+            <div class="info-item">
+              <h3>{{ 'CONTACT.PHONE' | translate }}</h3>
+              <p>{{ 'CONTACT.PHONE_VALUE' | translate }}</p>
+            </div>
+            <div class="info-item">
+              <h3>{{ 'CONTACT.ADDRESS' | translate }}</h3>
+              <p>{{ 'CONTACT.ADDRESS_VALUE' | translate }}</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="contact-form-section">
+      <mat-card class="contact-card">
+        <mat-card-title>{{ 'CONTACT.SEND_MESSAGE' | translate }}</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>{{ 'CONTACT.YOUR_NAME' | translate }}</mat-label>
+              <input matInput formControlName="name" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>{{ 'CONTACT.EMAIL_ADDRESS' | translate }}</mat-label>
+              <input matInput type="email" formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>{{ 'CONTACT.SUBJECT' | translate }}</mat-label>
+              <mat-select formControlName="subject" required>
+                <mat-option value="general">{{ 'CONTACT.GENERAL_INQUIRY' | translate }}</mat-option>
+                <mat-option value="technical">{{ 'CONTACT.TECHNICAL_SUPPORT' | translate }}</mat-option>
+                <mat-option value="feedback">{{ 'CONTACT.FEEDBACK' | translate }}</mat-option>
+                <mat-option value="bug">{{ 'CONTACT.BUG_REPORT' | translate }}</mat-option>
+                <mat-option value="feature">{{ 'CONTACT.FEATURE_REQUEST' | translate }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>{{ 'CONTACT.MESSAGE' | translate }}</mat-label>
+              <textarea matInput formControlName="message" rows="6" required></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">
+              {{ 'CONTACT.SEND_MESSAGE_BUTTON' | translate }}
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+
+  <button mat-raised-button color="primary" routerLink="/">{{ 'HOME.BACK_TO_HOME' | translate }}</button>
+</div>

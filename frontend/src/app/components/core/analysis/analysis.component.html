@@ -1,0 +1,51 @@
+<div class="analysis-container" id="analysis-content">
+  <h2>Crop Analysis</h2>
+  <mat-card class="analysis-card">
+    <mat-card-content>
+      <form [formGroup]="advisorForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Crop Type</mat-label>
+          <input matInput formControlName="cropType" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Symptoms</mat-label>
+          <mat-select formControlName="symptoms" required>
+            <mat-option value="spots_on_leaves">Spots on Leaves</mat-option>
+            <mat-option value="brown_lesions">Brown Lesions</mat-option>
+            <mat-option value="wilting">Wilting</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="file-upload">
+          <button mat-stroked-button type="button" (click)="fileInput.click()">
+            Upload Image
+          </button>
+          <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/*">
+        </div>
+
+        <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="advisorForm.invalid || isLoading">
+          Submit
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div *ngIf="analysisResult" class="results-card" id="analysis-results">
+    <mat-card>
+      <mat-card-title>Analysis Results</mat-card-title>
+      <mat-card-content>
+        <p><strong>Disease:</strong> {{ analysisResult.disease.name }}</p>
+        <p><strong>Cause:</strong> {{ analysisResult.disease.cause }}</p>
+        <p><strong>Treatment:</strong> {{ analysisResult.disease.treatment }}</p>
+        <button mat-button color="primary" (click)="downloadResult(analysisResult)">Download PDF</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="download-section">
+    <button mat-raised-button color="primary" (click)="downloadAnalysisPdf()">Download Analysis PDF</button>
+  </div>
+</div>

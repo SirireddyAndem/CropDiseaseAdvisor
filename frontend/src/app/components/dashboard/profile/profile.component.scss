@@ -1,0 +1,112 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e8f5e8;
+  min-height: 100vh;
+
+  h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .section-card {
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+
+    mat-card-header {
+      background-color: #f1f8e9;
+      border-radius: 12px 12px 0 0;
+      padding: 16px;
+
+      mat-card-title {
+        color: #2e7d32;
+        font-weight: 600;
+      }
+    }
+
+    mat-card-content {
+      padding: 16px;
+
+      .form-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+
+        mat-form-field {
+          flex: 1;
+        }
+
+        .photo-upload {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex: 1;
+
+          button {
+            color: #2e7d32;
+            border-color: #2e7d32;
+
+            &:hover {
+              background-color: #e8f5e8;
+            }
+          }
+
+          .profile-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border-radius: 6px;
+        margin-top: 16px;
+
+        &:hover {
+          background-color: #45a049;
+        }
+
+        &:disabled {
+          background-color: #cccccc;
+        }
+      }
+
+      .crops-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .crop-tag {
+          background-color: #e8f5e8;
+          color: #2e7d32;
+          padding: 4px 8px;
+          border-radius: 16px;
+          font-size: 14px;
+        }
+      }
+
+      .farmer-details {
+        p {
+          margin: 10px 0;
+          color: #424242;
+          line-height: 1.5;
+
+          strong {
+            color: #388e3c;
+          }
+        }
+      }
+    }
+  }
+}

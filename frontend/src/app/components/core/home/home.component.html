@@ -1,0 +1,56 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>{{ 'HEADER.CROP_ADVISOR' | translate }}</h1>
+      <p>{{ 'HOME.GROW_SMART' | translate }}</p>
+      <div class="navigation-buttons">
+        <button mat-raised-button color="primary" routerLink="/login" *ngIf="!isLoggedIn">{{ 'AUTH.USER_LOGIN' | translate }}</button>
+        <button mat-raised-button color="primary" routerLink="/register" *ngIf="!isLoggedIn">{{ 'AUTH.USER_REGISTER' | translate }}</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.WreGpy-r9ITC03KIXL-duQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Crop Field">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <h2>{{ 'HOME.WHY_CHOOSE' | translate }}</h2>
+    <div class="features-grid">
+      <mat-card class="feature-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'HOME.ACCURATE_DIAGNOSIS' | translate }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://img.freepik.com/premium-photo/diagnosing-plant-diseases-aiding-precision-agriculture-with-crop-health-app-modern-farmers-concept-crop-health-app-precision-agriculture-plant-disease-diagnosis-modern-farming_918839-362517.jpg?w=2000" alt="Diagnosis">
+        <mat-card-content>
+          <p>{{ 'HOME.ACCURATE_DIAGNOSIS_DESC' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="feature-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'HOME.QUICK_TREATMENT' | translate }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://tse2.mm.bing.net/th/id/OIP.oWwQkGZwwEs3-TwRM7vO9gHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Treatment">
+        <mat-card-content>
+          <p>{{ 'HOME.QUICK_TREATMENT_DESC' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="feature-card">
+        <mat-card-header>
+          <mat-card-title>{{ 'HOME.EXPERT_SUPPORT' | translate }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://greenium.kr/wp-content/uploads/2022/12/221211_%EA%B7%B8%EB%A6%AC%EB%8B%88%EC%97%84_%EC%95%A0%EA%B7%B8%EB%A6%AC%ED%85%8C%ED%81%AC.png" alt="Support">
+        <mat-card-content>
+          <p>{{ 'HOME.EXPERT_SUPPORT_DESC' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2>{{ 'HOME.START_PROTECTING' | translate }}</h2>
+    <button mat-raised-button color="primary" routerLink="/register">{{ 'HOME.GET_STARTED' | translate }}</button>
+  </section>
+</div>

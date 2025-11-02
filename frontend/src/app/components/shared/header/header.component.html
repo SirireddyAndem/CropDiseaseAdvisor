@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>{{ 'HEADER.CROP_ADVISOR' | translate }}</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/">{{ 'HEADER.HOME' | translate }}</a>
+  <a mat-button routerLink="/about">{{ 'HEADER.ABOUT' | translate }}</a>
+  <a mat-button routerLink="/reviews">{{ 'HEADER.REVIEWS' | translate }}</a>
+  <a mat-button routerLink="/contact">{{ 'HEADER.CONTACT' | translate }}</a>
+  <a mat-button routerLink="/dashboard" *ngIf="authService.isLoggedIn()">{{ 'HEADER.DASHBOARD' | translate }}</a>
+  <a mat-button *ngIf="!authService.isLoggedIn()" routerLink="/login">{{ 'HEADER.LOGIN' | translate }}</a>
+  <a mat-button *ngIf="authService.isLoggedIn()" (click)="authService.logout()">{{ 'HEADER.LOGOUT' | translate }}</a>
+
+  <mat-form-field appearance="outline" class="lang-switcher">
+    <mat-select (selectionChange)="switchLang($event.value)" [value]="translate.currentLang">
+      <mat-option value="en">English</mat-option>
+      <mat-option value="te">తెలుగు</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>

@@ -1,0 +1,121 @@
+.advisor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e8f5e8; // Light green shade background matching dashboard
+  min-height: 100vh;
+  width: 100%;
+
+  h2 {
+    color: #2e7d32; // Dark green for title
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .advisor-card {
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+
+    mat-card-title {
+      color: #2e7d32;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    mat-card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        mat-form-field {
+          width: 100%;
+        }
+
+        .file-upload {
+          margin: 10px 0 20px 0;
+          text-align: center;
+
+          button {
+            color: #2e7d32;
+            border-color: #2e7d32;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: #f1f8e9;
+            }
+          }
+        }
+
+        mat-progress-bar {
+          margin: 10px 0;
+        }
+
+        button[type="submit"] {
+          background-color: #4caf50;
+          color: white;
+          border-radius: 6px;
+          transition: background-color 0.2s ease;
+          align-self: center;
+          min-width: 150px;
+
+          &:hover {
+            background-color: #45a049;
+          }
+
+          &:disabled {
+            background-color: #cccccc;
+          }
+        }
+      }
+    }
+  }
+
+  .results-card {
+    width: 100%;
+    max-width: 700px;
+
+    mat-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      background-color: #ffffff;
+
+      mat-card-title {
+        color: #2e7d32;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      mat-card-content {
+        p {
+          margin: 10px 0;
+          color: #424242;
+          line-height: 1.5;
+
+          strong {
+            color: #388e3c;
+          }
+        }
+
+        button {
+          margin-top: 15px;
+          background-color: #4caf50;
+          color: white;
+          border-radius: 6px;
+          transition: background-color 0.2s ease;
+          align-self: center;
+          min-width: 150px;
+
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+      }
+    }
+  }
+}

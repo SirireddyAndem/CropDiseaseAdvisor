@@ -1,0 +1,69 @@
+<div class="dashboard-container" id="dashboard-content">
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <nav class="dashboard-nav">
+      <button mat-button routerLink="./analysis" routerLinkActive="active">ANALYSIS</button>
+      <button mat-button routerLink="./profile" routerLinkActive="active">PROFILE</button>
+      <button mat-button color="primary" (click)="downloadDashboardPdf()">Download PDF</button>
+    </nav>
+  </header>
+
+  <div class="summary-cards">
+    <mat-card class="summary-card">
+      <mat-card-content>
+        <h3>{{ pastReports.length }}</h3>
+        <p>Crops Added</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="summary-card">
+      <mat-card-content>
+        <h3>{{ getLatestPest() }}</h3>
+        <p>Bacterial Spot</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="summary-card">
+      <mat-card-content>
+        <h3>{{ getCurrentRecommendations() }}</h3>
+        <p>Current Recommendations</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="charts-section">
+    <div class="chart-container">
+      <h3>Crop Growth</h3>
+      <canvas id="cropGrowthChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Disease Frequency</h3>
+      <canvas id="diseaseFrequencyChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Reports per Month</h3>
+      <canvas id="reportsPerMonthChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Child router outlet for analysis and profile -->
+  <router-outlet></router-outlet>
+
+  <div class="reports-section" *ngIf="pastReports.length > 0">
+    <h2>Past Reports</h2>
+    <div class="reports-list">
+      <mat-card *ngFor="let report of pastReports" class="report-card">
+        <mat-card-header>
+          <mat-card-title>{{ report.cropType | titlecase }}</mat-card-title>
+          <mat-card-subtitle>{{ report.createdAt | date:'medium' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Disease:</strong> {{ report.disease.name }}</p>
+          <p><strong>Cause:</strong> {{ report.disease.cause }}</p>
+          <p><strong>Treatment:</strong> {{ report.disease.treatment }}</p>
+          <button mat-button color="primary" (click)="downloadReport(report)">Download PDF</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+

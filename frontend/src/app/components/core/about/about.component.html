@@ -1,0 +1,83 @@
+<div class="about-container">
+  <h1>{{ 'ABOUT.TITLE' | translate }}</h1>
+  <div class="about-content">
+    <section class="mission-section">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.EjZPmnyZqxvziqg4qWDipwHaEO?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Our Mission" class="section-image">
+      <mat-card>
+        <mat-card-content>
+          <h2>{{ 'ABOUT.OUR_MISSION' | translate }}</h2>
+          <p>{{ 'ABOUT.MISSION_TEXT' | translate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="how-it-works-section">
+      <mat-card>
+        <mat-card-content>
+          <h2>{{ 'ABOUT.HOW_IT_WORKS' | translate }}</h2>
+          <div class="steps">
+            <div class="step">
+              <img src="https://i0.wp.com/geopard.tech/wp-content/uploads/2021/12/Crop-Diseases_-Types-Causes-and-Symptoms-min.jpg?fit=1024%2C555&ssl=1" alt="Step 1">
+              <p><strong>{{ 'ABOUT.STEP1' | translate }}</strong></p>
+            </div>
+            <div class="step">
+              <img src="https://oizom.com/wp-content/uploads/2024/04/Effect-of-air-pollution-on-plants-and-animals_1-1024x640.webp" alt="Step 2">
+              <p><strong>{{ 'ABOUT.STEP2' | translate }}</strong></p>
+            </div>
+            <div class="step">
+              <img src="https://www.xenonstack.com/hubfs/AI-Powered-Early-Detection-and-Prevention-of-Crop-Diseases.png" alt="Step 3">
+              <p><strong>{{ 'ABOUT.STEP3' | translate }}</strong></p>
+            </div>
+            <div class="step">
+              <img src="https://tse4.mm.bing.net/th/id/OIP.gD02Diw5KHP42EPI6Aav7AHaEP?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Step 4">
+              <p><strong>{{ 'ABOUT.STEP4' | translate }}</strong></p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="crops-section">
+      <mat-card>
+        <mat-card-content>
+          <h2>{{ 'ABOUT.SUPPORTED_CROPS' | translate }}</h2>
+          <div class="crops-grid">
+            <div class="crop-item">
+              <img src="https://thumbs.dreamstime.com/z/tomato-crop-growth-plants-inside-greenhouse-75577670.jpg" alt="Tomato">
+              <p>{{ 'ABOUT.TOMATO' | translate }}</p>
+            </div>
+            <div class="crop-item">
+              <img src="https://img.freepik.com/premium-photo/row-potato-crops-green-field_908985-82754.jpg" alt="Potato">
+              <p>{{ 'ABOUT.POTATO' | translate }}</p>
+            </div>
+            <div class="crop-item">
+              <img src="https://media.istockphoto.com/photos/ripe-rice-in-the-field-of-farmland-picture-id622925154?k=20&m=622925154&s=612x612&w=0&h=hLtkpC3VdXeqWhblSowvPRu4XgsCwFW6JQM-Px2KzbY=" alt="Rice">
+              <p>{{ 'ABOUT.RICE' | translate }}</p>
+            </div>
+            <div class="crop-item">
+              <img src="https://tse4.mm.bing.net/th/id/OIP.8LrBxrYE7GdGPI3WNXf0OwHaHJ?w=2479&h=2393&rs=1&pid=ImgDetMain&o=7&rm=3" alt="More Crops">
+              <p>{{ 'ABOUT.MORE_CROPS' | translate }}</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="tech-section">
+      <mat-card>
+        <mat-card-content>
+          <h2>{{ 'ABOUT.TECHNOLOGY_STACK' | translate }}</h2>
+          <p>{{ 'ABOUT.TECH_TEXT' | translate }}</p>
+          <ul>
+            <li><strong>{{ 'ABOUT.TECH_FRONTEND' | translate }}</strong></li>
+            <li><strong>{{ 'ABOUT.TECH_BACKEND' | translate }}</strong></li>
+            <li><strong>{{ 'ABOUT.TECH_DATABASE' | translate }}</strong></li>
+            <li><strong>{{ 'ABOUT.TECH_AUTH' | translate }}</strong></li>
+            <li><strong>{{ 'ABOUT.TECH_AI' | translate }}</strong></li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+  <button mat-raised-button color="primary" routerLink="/">{{ 'HOME.BACK_TO_HOME' | translate }}</button>
+</div>

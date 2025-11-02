@@ -1,0 +1,48 @@
+<div class="advisor-container">
+  <h2>{{ 'ADVISOR.TITLE' | translate }}</h2>
+  <mat-card class="advisor-card">
+    <mat-card-title>{{ 'ADVISOR_FORM.TITLE' | translate }}</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="advisorForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'ADVISOR_FORM.CROP_TYPE' | translate }}</mat-label>
+          <input matInput formControlName="cropType" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'ADVISOR_FORM.SYMPTOMS' | translate }}</mat-label>
+          <mat-select formControlName="symptoms" required>
+            <mat-option value="spots_on_leaves">{{ 'SYMPTOMS.SPOTS_ON_LEAVES' | translate }}</mat-option>
+            <mat-option value="brown_lesions">{{ 'SYMPTOMS.BROWN_LESIONS' | translate }}</mat-option>
+            <mat-option value="wilting">{{ 'SYMPTOMS.WILTING' | translate }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="file-upload">
+          <button mat-stroked-button type="button" (click)="fileInput.click()">
+            {{ 'ADVISOR_FORM.UPLOAD_IMAGE' | translate }}
+          </button>
+          <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/*">
+        </div>
+
+        <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="advisorForm.invalid || isLoading">
+          {{ 'ADVISOR_FORM.SUBMIT' | translate }}
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div *ngIf="analysisResult" class="results-card">
+    <mat-card>
+      <mat-card-title>{{ 'RESULTS.TITLE' | translate }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>{{ 'RESULTS.DISEASE' | translate }}:</strong> {{ analysisResult.disease.name }}</p>
+        <p><strong>{{ 'RESULTS.CAUSE' | translate }}:</strong> {{ analysisResult.disease.cause }}</p>
+        <p><strong>{{ 'RESULTS.TREATMENT' | translate }}:</strong> {{ analysisResult.disease.treatment }}</p>
+        <button mat-button color="primary" (click)="downloadResult(analysisResult)">{{ 'ADVISOR.DOWNLOAD_PDF' | translate }}</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
