@@ -1,12 +1,8 @@
-# TODO: Fix Dashboard Page
+# TODO: Fix Deployment Issues for Crop Disease Advisor
 
 ## Tasks
-- [x] Add child routes for 'analysis' and 'profile' under dashboard in app.routes.ts
-- [x] Update ANALYSIS and PROFILE button routerLinks in dashboard.component.html to use child paths
-- [x] Add missing downloadReport method in dashboard.component.ts
-- [x] Fix broken code in setProfileData method in dashboard.component.ts
-- [x] Add RouterOutlet to dashboard.component.ts imports
-- [x] Add <router-outlet> to dashboard.component.html
-- [x] Fix pdfMake vfs error in report.service.ts
-- [x] Fix deprecated useDefaultLang warning in app.config.ts
-- [x] Test the dashboard by running the application
+- [x] Update server.js to correctly serve Angular build files from the right path
+- [x] Add environment variable for MongoDB Atlas connection in .env file
+- [x] Update root package.json build script to ensure frontend is built correctly
+- [x] Configure Render build and start commands
+- [x] Test deployment locally and on Render
