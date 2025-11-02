@@ -1,4 +1,6 @@
 {
+  "name": "crop-disease-advisor",
+  "version": "1.0.0",
   "dependencies": {
     "@fontsource/noto-sans-telugu": "^5.2.8",
     "chart.js": "^4.5.1",
@@ -9,5 +11,9 @@
   },
   "devDependencies": {
     "@types/pdfmake": "^0.2.12"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "start": "cd backend && node server.js"
   }
 }
